@@ -1,9 +1,14 @@
-
+;;; init.el --- my emacs configuration
+;;; Commentary:
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
+;;; Code:
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-benchmarking) ;; Measure startup time
+
+;; Measure startup time
+(require 'init-benchmarking)
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
@@ -85,6 +90,8 @@
 ;; (require 'init-github)
 
 (require 'init-projectile)
+
+(require 'init-multi-term)
 
 ;; (require 'init-compile)
 ;; (require 'init-crontab)
