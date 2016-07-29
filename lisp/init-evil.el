@@ -1,3 +1,8 @@
+;;; init-evil.el --- configuration for evils.
+;;; Commentary:
+
+;;; Code:
+
 (require-package 'evil)
 (require-package 'evil-nerd-commenter)
 (require-package 'general)
@@ -8,9 +13,18 @@
 ;; enable evil-surround globally
 (global-evil-surround-mode 1)
 
+(defvar evil-insert-state-map)
+(defvar evil-normal-state-map)
+(defvar evil-visual-state-map)
+(defvar evil-motion-state-map)
+
 ;; remove all keybindings from insert-state keymap, use emacs-state when editing
 (setcdr evil-insert-state-map nil)
     
+;; C-h to backspace
+(define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+(define-key evil-insert-state-map (kbd "M-h") 'backward-kill-word)
+
 ;; C-j to switch back normal-state
 (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "C-j") 'evil-normal-state)
@@ -75,19 +89,18 @@
       (move-to-column column t)))))
 
 (defun move-text-down (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines down."
+  "Move region (transient-mark-mode active) or current line ARG lines down."
   (interactive "*p")
   (move-text-internal arg))
 
 (defun move-text-up (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines up."
+  "Move region (transient-mark-mode active) or current line ARG lines up."
   (interactive "*p")
   (move-text-internal (- arg))
-  (previous-line))
+  (forward-line -1))
                                         
 (define-key evil-normal-state-map (kbd "C-j") 'move-text-down)
 (define-key evil-normal-state-map (kbd "C-k") 'move-text-up)
                                           
 (provide 'init-evil)                     
+;;; init-evil.el ends here
