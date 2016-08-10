@@ -55,14 +55,28 @@
   (move-text-internal (- arg))
   (forward-line -1))
 
+;; remove all keybindings from insert-state keymap, use emacs-state when editing
+(setcdr evil-insert-state-map nil)
+
+;; Use < to shrink window horizontally.
+(define-key evil-normal-state-map (kbd "<") 'shrink-window-horizontally)
+;; Use > to enlarge window horizontally.
+(define-key evil-normal-state-map (kbd ">") 'enlarge-window-horizontally)
+
+;; Use { to enlarge window
+(define-key evil-normal-state-map (kbd "{") 'enlarge-window)
+;; Use } to shrink-window
+(define-key evil-normal-state-map (kbd "}") 'shrink-window)
+
+;; TAB to switch to other window
+(define-key evil-normal-state-map (kbd "TAB") 'other-window)
+;; TAB to indent in visual-state
+(define-key evil-visual-state-map (kbd "TAB") 'for-tab-command)
+
 ;; Use C-j to move current line down.
 (define-key evil-normal-state-map (kbd "C-j") 'move-text-down)
 ;; Use C-k to move current line up.
 (define-key evil-normal-state-map (kbd "C-k") 'move-text-up)
- 
-
-;; remove all keybindings from insert-state keymap, use emacs-state when editing
-(setcdr evil-insert-state-map nil)
     
 ;; C-h to backspace
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
@@ -77,11 +91,6 @@
 
 ;; C-b to scroll up
 (define-key evil-normal-state-map (kbd "C-b") 'evil-scroll-up)
-
-;; TAB to switch to other window
-(define-key evil-normal-state-map (kbd "TAB") 'other-window)
-;; TAB to indent in visual-state
-(define-key evil-visual-state-map (kbd "TAB") 'for-tab-command)
 
 ;; Use H to move the cursor to the first character of current screen line.
 (define-key evil-normal-state-map "H" (kbd "^"))
