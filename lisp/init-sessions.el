@@ -1,17 +1,29 @@
-;; save a list of open files in ~/.emacs.d/.emacs.desktop
+;;; init-sessions --- save a list of open files in ~/.emacs.d/.emacs.desktop
+;;; Commentary:
+
+;;; Code:
+
+(defvar desktop-path)
+(defvar desktop-auto-save-timeout)
+(defvar session-save-file)
+(defvar session-name-disable-regexp)
+(defvar desktop-globals-to-save)
+
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)
 (desktop-save-mode 1)
 
 (defadvice desktop-read (around time-restore activate)
-    (let ((start-time (current-time)))
-      (prog1
-          ad-do-it
-        (message "Desktop restored in %.2fms"
-                 (sanityinc/time-subtract-millis (current-time)
-                                                 start-time)))))
+  "."
+  (let ((start-time (current-time)))
+    (prog1
+        ad-do-it
+      (message "Desktop restored in %.2fms"
+               (sanityinc/time-subtract-millis (current-time)
+                                               start-time)))))
 
 (defadvice desktop-create-buffer (around time-create activate)
+  "."
   (let ((start-time (current-time))
         (filename (ad-get-arg 1)))
     (prog1
@@ -74,3 +86,4 @@
 
 
 (provide 'init-sessions)
+;;; init-sessions.el ends here

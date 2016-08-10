@@ -1,3 +1,7 @@
+;;; init-projectile --- Projectile Configuration
+;;; Commentary:
+
+;;; Code:
 (when (require-package 'projectile)
   (add-hook 'after-init-hook 'projectile-global-mode)
 
@@ -7,8 +11,6 @@
 
   ;; Shorter modeline
   (after-load 'projectile
-
-
     (setq-default
      projectile-mode-line
      '(:eval
@@ -16,5 +18,5 @@
            " Pr"
          (format " Pr[%s]" (projectile-project-name)))))))
 
-
 (provide 'init-projectile)
+;;; init-projectile.el ends here
