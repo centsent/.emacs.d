@@ -1,3 +1,8 @@
+;;; init-ido --- ido Configuration
+;;; Commentary:
+
+;;; Code:
+
 ;; Use C-f during file selection to switch to regular find-file
 (ido-mode t)
 (ido-everywhere t)
@@ -6,11 +11,13 @@
 (setq ido-auto-merge-work-directories-length 0)
 (setq ido-use-virtual-buffers t)
 
+(defvar smex-save-file)
+
 (when (maybe-require-package 'ido-ubiquitous)
   (ido-ubiquitous-mode t))
 
 ;; Use smex to handle M-x
-(when (maybe-require-package 'smex)
+(when (require-package 'smex)
   ;; Change path for ~/.smex-items
   (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
   (global-set-key [remap execute-extended-command] 'smex))
@@ -24,6 +31,5 @@
 (add-hook 'ido-setup-hook (lambda () (define-key ido-completion-map [up] 'previous-history-element)))
 
 
-
-
 (provide 'init-ido)
+;;; init-ido.el ends here

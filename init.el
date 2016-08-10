@@ -51,9 +51,7 @@
 (require 'init-osx-keys)
 (require 'init-themes)
 (require 'init-editorconfig)
-(require 'init-smex)
 (require 'init-ido)
-;; (require 'init-helm)
 (require 'init-company)
 (require 'init-yasnippet)
 (require 'init-emmet)
@@ -72,7 +70,7 @@
 (require 'init-ibuffer)
 
 ;; (require 'init-recentf)
-(require 'init-ido)
+;; (require 'init-ido)
 ;; (require 'init-hippie-expand)
 ;; (require 'init-company)
 ;; (require 'init-windows)
@@ -90,7 +88,7 @@
 ;; (require 'init-github)
 
 (require 'init-projectile)
-
+;; (require 'init-ivy)
 (require 'init-multi-term)
 
 ;; (require 'init-compile)
@@ -113,3 +111,4 @@
 
 
 (provide 'init)
+;;; init.el ends here
