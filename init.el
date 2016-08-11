@@ -24,7 +24,6 @@
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
-(require 'init-basic)
 (require 'init-utils)
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
@@ -38,19 +37,11 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-
 (require-package 'better-defaults)
-(require-package 'magit)
-(require-package 'autopair)
-(require-package 'undo-tree)
-
-(autopair-global-mode) ;; enable autopair in all buffers
-(global-undo-tree-mode)
-
 
 (require 'init-osx-keys)
 (require 'init-themes)
-(require 'init-editorconfig)
+;; (require 'init-editorconfig)
 (require 'init-ido)
 (require 'init-company)
 (require 'init-yasnippet)
@@ -62,7 +53,7 @@
 (require 'init-javascript)
 (require 'init-flycheck)
 
-;; (require 'init-gui-frames)
+(require 'init-gui-frames)
 ;; (require 'init-dired)
 ;; (require 'init-isearch)
 ;; (require 'init-grep)
@@ -70,25 +61,22 @@
 (require 'init-ibuffer)
 
 ;; (require 'init-recentf)
-;; (require 'init-ido)
 ;; (require 'init-hippie-expand)
-;; (require 'init-company)
 ;; (require 'init-windows)
-(require 'init-sessions)
+;; (require 'init-sessions)
 ;; (require 'init-fonts)
 ;; (require 'init-mmm)
 
-;; (require 'init-editing-utils)
-;; (require 'init-whitespace)
+(require 'init-editing-utils)
+(require 'init-whitespace)
 ;; (require 'init-fci)
 
 ;; (require 'init-vc)
 ;; (require 'init-darcs)
-;;(require 'init-git)
-;; (require 'init-github)
+(require 'init-git)
+(require 'init-github)
 
 (require 'init-projectile)
-;; (require 'init-ivy)
 (require 'init-multi-term)
 
 ;; (require 'init-compile)
@@ -102,7 +90,7 @@
 ;; (require 'init-org)
 ;; (require 'init-nxml)
 ;; (require 'init-html)
-;; (require 'init-css)
+(require 'init-css)
 ;; (require 'init-haml)
 ;; (require 'init-python-mode)
 ;; (require 'init-paredit)
