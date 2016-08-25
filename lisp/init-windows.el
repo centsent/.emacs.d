@@ -1,3 +1,8 @@
+;;; init-windows --- Windows Configurations
+;;; Commentary:
+
+;;; Code:
+
 ;;----------------------------------------------------------------------------
 ;; Navigate window layouts with "C-c <left>" and "C-c <right>"
 ;;----------------------------------------------------------------------------
@@ -94,3 +99,4 @@ Call a second time to restore the original window configuration."
 
 
 (provide 'init-windows)
+;;; init-windows.el ends here
