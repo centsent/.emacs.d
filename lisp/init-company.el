@@ -86,6 +86,43 @@
     (company-abort)))
 ;;; Company and Yasnippet integration ends here.
 
+(require-package 'tern)
+(require-package 'tern-auto-complete)
+;; (require-package 'company-tern)
+; load company mode html backend
+;; (require-package 'company-web-html)
+; load company mode jade backend
+;; (require-package 'company-web-jade)
+; load company mode slim backend
+;; (require-package 'company-web-slim)
+
+;;(defun my-web-mode-hook ()
+  ;;"Hook for `web-mode'."
+    ;;(set (make-local-variable 'company-backends)
+         ;;'(company-tern company-web-html company-yasnippet company-files)))
+
+;;(add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; ;; Enable JavaScript completion between <script>...</script> etc.
+;; (defadvice company-tern (before web-mode-set-up-ac-sources activate)
+;;   "Set `tern-mode' based on current language before running company-tern."
+;;   (message "advice")
+;;   (if (equal major-mode 'web-mode)
+;;       (let ((web-mode-cur-language
+;;              (web-mode-language-at-pos)))
+;;         (if (or (string= web-mode-cur-language "javascript")
+;;                 (string= web-mode-cur-language "jsx")
+;;                 )
+;;             (unless tern-mode (tern-mode))
+;;           (if tern-mode (tern-mode -1))))))
+
+;; manual autocomplete
+;;;(define-key web-mode-map (kbd "M-SPC") 'company-complete)
+
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
 
 (when (require-package 'company)
   (add-hook 'after-init-hook 'global-company-mode)
@@ -104,7 +141,6 @@
     "Add BACKEND to a buffer-local version of `company-backends'."
     (set (make-local-variable 'company-backends)
          (append (list backend) company-backends))))
-
 
 ;; Suspend page-break-lines-mode while company menu is active
 ;; (see https://github.com/company-mode/company-mode/issues/416)
@@ -136,7 +172,6 @@
 (after-load 'yasnippet
   (define-key yas-minor-mode-map [tab] nil)
   (define-key yas-minor-mode-map (kbd "TAB") nil)
-  
 
   (define-key yas-keymap [tab] 'tab-complete-or-next-field)
   (define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)

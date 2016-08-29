@@ -7,9 +7,6 @@
 (require-package 'js2-mode)
 (require-package 'web-mode)
 (require-package 'web-beautify)
-(require-package 'tern)
-(require-package 'tern-auto-complete)
-;; (require-package 'company-tern)
 
 (require 'js2-mode)
 
@@ -39,11 +36,6 @@
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 ;; use js2-mode for .js files
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
 
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke

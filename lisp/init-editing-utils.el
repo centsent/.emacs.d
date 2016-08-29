@@ -7,6 +7,7 @@
 (require-package 'unfill)
 (require-package 'autopair)
 (require-package 'editorconfig)
+(require-package 'aggressive-indent)
 
 ;; enable editorconfig
 ;; (editorconfig-mode 1)
@@ -17,6 +18,8 @@
 (autopair-global-mode)
 
 ;; (electric-pair-mode)
+
+(global-aggressive-indent-mode 1)
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
@@ -100,18 +103,18 @@
 ;; (global-set-key (kbd "M-Z") 'zap-up-to-char)
 
 
-;; (require-package 'browse-kill-ring)
-;; (defvar browse-kill-ring-separator)
-;; (defvar browse-kill-ring-mode-map)
-;; (setq browse-kill-ring-separator "\f")
-;; (global-set-key (kbd "M-Y") 'browse-kill-ring)
-;; (after-load 'browse-kill-ring
-;;   (define-key browse-kill-ring-mode-map (kbd "C-g") 'browse-kill-ring-quit)
-;;   (define-key browse-kill-ring-mode-map (kbd "M-n") 'browse-kill-ring-forward)
-;;   (define-key browse-kill-ring-mode-map (kbd "M-p") 'browse-kill-ring-previous))
-;; (defvar page-break-lines-modes)
-;; (after-load 'page-break-lines
-;;   (push 'browse-kill-ring-mode page-break-lines-modes))
+(require-package 'browse-kill-ring)
+(defvar browse-kill-ring-separator)
+(defvar browse-kill-ring-mode-map)
+(setq browse-kill-ring-separator "\f")
+(global-set-key (kbd "M-Y") 'browse-kill-ring)
+(after-load 'browse-kill-ring
+  (define-key browse-kill-ring-mode-map (kbd "C-g") 'browse-kill-ring-quit)
+  (define-key browse-kill-ring-mode-map (kbd "M-n") 'browse-kill-ring-forward)
+  (define-key browse-kill-ring-mode-map (kbd "M-p") 'browse-kill-ring-previous))
+(defvar page-break-lines-modes)
+(after-load 'page-break-lines
+  (push 'browse-kill-ring-mode page-break-lines-modes))
 
 
 ;; ;;----------------------------------------------------------------------------
@@ -155,7 +158,7 @@
 (when (maybe-require-package 'avy)
   (global-set-key (kbd "C-;") 'avy-goto-word-or-subword-1))
 
-(require-package 'multiple-cursors)
+;; (require-package 'multiple-cursors)
 ;; ;; multiple-cursors
 ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)

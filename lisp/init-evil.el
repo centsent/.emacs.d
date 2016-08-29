@@ -7,6 +7,7 @@
 (require-package 'evil-nerd-commenter)
 (require-package 'general)
 (require-package 'evil-surround)
+(require-package 'evil-tabs)
 
 (evil-mode 1)
 
@@ -20,6 +21,7 @@
 
 ;; Move text.
 (defun move-text-internal (arg)
+  "Move region (transient-mark-mode active) or current line by ARG direction."
   (cond
    ((and mark-active transient-mark-mode)
     (if (> (point) (mark))
@@ -69,7 +71,7 @@
 (define-key evil-normal-state-map (kbd "}") 'shrink-window)
 
 ;; TAB to switch to other window
-(define-key evil-normal-state-map (kbd "TAB") 'other-window)
+(define-key evil-normal-state-map (kbd "C-w") 'switch-window)
 ;; TAB to indent in visual-state
 (define-key evil-visual-state-map (kbd "TAB") 'for-tab-command)
 
@@ -77,7 +79,7 @@
 (define-key evil-normal-state-map (kbd "C-j") 'move-text-down)
 ;; Use C-k to move current line up.
 (define-key evil-normal-state-map (kbd "C-k") 'move-text-up)
-    
+
 ;; C-h to backspace
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
 (define-key evil-insert-state-map (kbd "M-h") 'backward-kill-word)
@@ -91,6 +93,20 @@
 
 ;; C-b to scroll up
 (define-key evil-normal-state-map (kbd "C-b") 'evil-scroll-up)
+
+;; (require-package 'multiple-cursors)
+;; multiple-cursors
+;; (define-key evil-insert-state-map (kbd "C-c C-n") 'mc/mark-next-like-this)
+;; (define-key evil-insert-state-map (kbd "C-c C-p") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; ;; From active region to multiple cursors:
+;; (global-set-key (kbd "C-c c r") 'set-rectangular-region-anchor)
+;; (global-set-key (kbd "C-c c c") 'mc/edit-lines)
+;; (global-set-key (kbd "C-c c e") 'mc/edit-ends-of-lines)
+;; (global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
 
 ;; Use H to move the cursor to the first character of current screen line.
 (define-key evil-normal-state-map "H" (kbd "^"))
@@ -117,25 +133,26 @@
 ;; general
 (general-evil-setup t)
 
-;; use `,` as leader key
+;; Use `,` as leader key
 (nvmap :prefix ","
        "w" 'evil-write
        "q" 'evil-quit
+       "d" 'kill-paragraph
        "x" 'evil-save-and-quit
-       "f" 'ido-find-file
+       "f" 'helm-find-files
        "b" 'ibuffer
+       "p" 'projectile-switch-project
        "eb" 'eval-buffer
        "mt" 'multi-term
-       "md" 'multi-term-dedicated-toggle)
+       "md" 'multi-term-dedicated-toggle
+       "mg" 'magit-status)
 
-;; {{ Use `SPC` as leader key
-;; all keywords arguments are still supported
+;; Use `SPC` as leader key
 (nvmap :prefix "SPC"
        "0" 'delete-window
        "1" 'delete-other-windows
        "2" 'split-window-below
        "3" 'split-window-right)
 
-                                         
-(provide 'init-evil)                     
+(provide 'init-evil)
 ;;; init-evil.el ends here
