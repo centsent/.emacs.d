@@ -41,7 +41,6 @@
 
 (require 'init-osx-keys)
 (require 'init-themes)
-;; (require 'init-editorconfig)
 (require 'init-ido)
 (require 'init-company)
 (require 'init-yasnippet)
@@ -60,9 +59,11 @@
 ;; (require 'init-uniquify)
 (require 'init-ibuffer)
 
+(require 'init-helm)
+
 ;; (require 'init-recentf)
-;; (require 'init-hippie-expand)
-;; (require 'init-windows)
+(require 'init-hippie-expand)
+(require 'init-windows)
 ;; (require 'init-sessions)
 ;; (require 'init-fonts)
 ;; (require 'init-mmm)
@@ -82,7 +83,7 @@
 ;; (require 'init-compile)
 ;; (require 'init-crontab)
 ;; (require 'init-textile)
-;; (require 'init-markdown)
+(require 'init-markdown)
 ;; (require 'init-csv)
 ;; (require 'init-erlang)
 ;; (require 'init-javascript)
