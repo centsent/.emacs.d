@@ -89,7 +89,7 @@
 (define-key evil-visual-state-map (kbd "C-j") 'evil-normal-state)
 
 ;; C-p to find file in project
-(define-key evil-normal-state-map (kbd "C-p") 'find-file-in-project)
+(define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
 
 ;; C-b to scroll up
 (define-key evil-normal-state-map (kbd "C-b") 'evil-scroll-up)
