@@ -22,7 +22,7 @@
         ("M-K" . term-send-kill-line)
         ("M-p" . previous-line)
         ("M-n" . next-line)
-        ("C-w" . other-window)))
+        ("C-w" . switch-window)))
 
 
 (provide 'init-multi-term)

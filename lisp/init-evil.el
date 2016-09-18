@@ -139,8 +139,9 @@
        "q" 'evil-quit
        "d" 'kill-paragraph
        "x" 'evil-save-and-quit
-       "f" 'helm-find-files
-       "b" 'ibuffer
+       "f" 'ido-find-file-other-window
+       "b" 'helm-buffers-list
+       "g" 'helm-projectile-grep
        "p" 'projectile-switch-project
        "eb" 'eval-buffer
        "mt" 'multi-term
