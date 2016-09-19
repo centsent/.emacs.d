@@ -142,6 +142,7 @@
        "f" 'ido-find-file-other-window
        "b" 'helm-buffers-list
        "g" 'helm-projectile-grep
+       "r" 'tern-rename-variable
        "p" 'projectile-switch-project
        "eb" 'eval-buffer
        "mt" 'multi-term
