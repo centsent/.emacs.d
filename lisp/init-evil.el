@@ -54,8 +54,8 @@
 (defun move-text-up (arg)
   "Move region (transient-mark-mode active) or current line ARG lines up."
   (interactive "*p")
-  (move-text-internal (- arg))
-  (forward-line -1))
+  (move-text-internal (- arg)))
+;; (forward-line -1))
 
 ;; remove all keybindings from insert-state keymap, use emacs-state when editing
 (setcdr evil-insert-state-map nil)
