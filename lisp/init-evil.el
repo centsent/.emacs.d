@@ -94,6 +94,9 @@
 ;; C-b to scroll up
 (define-key evil-normal-state-map (kbd "C-b") 'evil-scroll-up)
 
+(after-load 'go-mode
+  (define-key evil-normal-state-map (kbd "M-.") 'godef-jump-other-window))
+
 ;; (require-package 'multiple-cursors)
 ;; multiple-cursors
 ;; (define-key evil-insert-state-map (kbd "C-c C-n") 'mc/mark-next-like-this)
