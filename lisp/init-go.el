@@ -6,10 +6,9 @@
 (require-package 'go-mode)
 (require-package 'go-autocomplete)
 
-(require 'auto-complete-config)
-(require 'go-mode-autoloads)
+(setenv "GOPATH" "/Users/centsent/workspace/vagrant/gopath")
 
-(ac-config-default)
+(require 'go-mode-autoloads)
 
 (defun go-mode-setup ()
   ;; Use goimports instead of go-fmt
@@ -23,12 +22,7 @@
   ;; Go oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
 
-(defun auto-complete-for-go ()
-  (auto-complete-mode 1))
-
 (add-hook 'go-mode-hook 'go-mode-setup)
-(add-hook 'go-mode-hook 'auto-complete-for-go)
-
 
 (provide 'init-go)
 ;;; init-go.el ends here
