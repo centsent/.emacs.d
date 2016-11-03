@@ -7,7 +7,7 @@
 ;; Stop C-z from minimizing windows under OS X
 ;;----------------------------------------------------------------------------
 
-(toggle-frame-fullscreen)
+;; (toggle-frame-fullscreen)
 
 (defvar *is-a-mac*)
 

@@ -6,6 +6,7 @@
 ;;; Code:
 
 (require-package 'diminish)
+(require-package 'company-go)
 
 (defvar company-mode-map)
 (defvar company-active-map)

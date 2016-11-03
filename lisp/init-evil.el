@@ -142,7 +142,7 @@
        "q" 'evil-quit
        "d" 'kill-paragraph
        "x" 'evil-save-and-quit
-       "f" 'ido-find-file-other-window
+       "f" 'neotree-toggle
        "b" 'helm-buffers-list
        "g" 'helm-projectile-grep
        "r" 'tern-rename-variable

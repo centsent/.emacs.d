@@ -8,6 +8,7 @@
 (require-package 'autopair)
 (require-package 'editorconfig)
 (require-package 'aggressive-indent)
+(require-package 'neotree)
 
 ;; enable editorconfig
 ;; (editorconfig-mode 1)
@@ -19,7 +20,11 @@
 
 ;; (electric-pair-mode)
 
-(global-aggressive-indent-mode 1)
+;; (global-aggressive-indent-mode 1)
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+(add-hook 'css-mode-hook #'aggressive-indent-mode)
+
+(setq neo-smart-open t)
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
