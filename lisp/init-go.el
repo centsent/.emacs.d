@@ -8,7 +8,7 @@
 
 (setenv "GOPATH" "/Users/centsent/workspace/vagrant/gopath")
 
-(require 'go-mode-autoloads)
+;(require 'go-mode-autoloads)
 
 (defun go-mode-setup ()
   ;; Use goimports instead of go-fmt

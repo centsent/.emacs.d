@@ -9,6 +9,7 @@
 (require-package 'editorconfig)
 (require-package 'aggressive-indent)
 (require-package 'neotree)
+(require-package 'dockerfile-mode)
 
 ;; enable editorconfig
 ;; (editorconfig-mode 1)
