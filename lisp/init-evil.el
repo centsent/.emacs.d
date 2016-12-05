@@ -94,6 +94,12 @@
 ;; C-b to scroll up
 (define-key evil-normal-state-map (kbd "C-b") 'evil-scroll-up)
 
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-delete-node)
+(evil-define-key 'normal neotree-mode-map (kbd "c") 'neotree-create-node)
+(evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-rename-node)
+
 (after-load 'go-mode
   (define-key evil-normal-state-map (kbd "M-.") 'godef-jump-other-window))
 

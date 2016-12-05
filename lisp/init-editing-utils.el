@@ -10,6 +10,9 @@
 (require-package 'aggressive-indent)
 (require-package 'neotree)
 (require-package 'dockerfile-mode)
+(require-package 'yaml-mode)
+
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; enable editorconfig
 ;; (editorconfig-mode 1)
