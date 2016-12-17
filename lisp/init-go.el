@@ -5,14 +5,17 @@
 
 (require-package 'go-mode)
 (require-package 'go-autocomplete)
+;; (require-package 'auto-complete)
 
-(setenv "GOPATH" "/Users/centsent/workspace/vagrant/gopath")
 
-;(require 'go-mode-autoloads)
+;; (setenv "GOPATH" "/home/centsent/go")
+
+;; (ac-config-default)
 
 (defun go-mode-setup ()
-  ;; Use goimports instead of go-fmt
-  (setq gofmt-command "goimports")
+  ;; Use goreturns instead of go-fmt
+  (auto-complete-mode 1)
+  (setq gofmt-command "goreturns")
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
   ;; Customize compile command to run go build
