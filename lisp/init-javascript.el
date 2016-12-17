@@ -68,26 +68,27 @@
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
-(add-hook 'html-mode-hook 'emmet-mode)
+;; (add-hook 'html-mode-hook 'emmet-mode)
 (eval-after-load 'sgml-mode
   '(add-hook 'html-mode-hook
              (lambda ()
+               (emmet-mode 1)
                (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
-(add-hook 'web-mode-hook 'emmet-mode)
 (eval-after-load 'web-mode
   '(add-hook 'web-mode-hook
              (lambda ()
+               (emmet-mode 1)
                ;; short circuit js mode and just do everything in jsx-mode
                (if (equal web-mode-content-type "javascript")
                    (web-mode-set-content-type "jsx")
                  (message "now set to: %s" web-mode-content-type))
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
-(add-hook 'css-mode-hook 'emmet-mode)
 (eval-after-load 'css-mode
   '(add-hook 'css-mode-hook
              (lambda ()
+               (emmet-mode 1)
                (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
 
 
