@@ -10,7 +10,6 @@
 
 (defvar company-mode-map)
 (defvar company-active-map)
-(defvar company-quickhelp-mode-map)
 (defvar company-backends)
 (defvar yas-keymap)
 (defvar yas-minor-mode-map)
@@ -134,8 +133,6 @@
     (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev)))
   (global-set-key (kbd "M-C-/") 'company-complete)
   (when (require-package 'company-quickhelp)
-    (after-load 'company-quickhelp
-      (define-key company-quickhelp-mode-map (kbd "M-h") nil))
     (add-hook 'after-init-hook 'company-quickhelp-mode))
 
   (defun sanityinc/local-push-company-backend (backend)

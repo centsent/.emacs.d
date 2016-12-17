@@ -39,7 +39,6 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 
-
 ;; for better jsx syntax-highlighting in web-mode
 ;; - courtesy of Patrick @halbtuerke
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
@@ -69,11 +68,13 @@
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
+(add-hook 'html-mode-hook 'emmet-mode)
 (eval-after-load 'sgml-mode
   '(add-hook 'html-mode-hook
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 
+(add-hook 'web-mode-hook 'emmet-mode)
 (eval-after-load 'web-mode
   '(add-hook 'web-mode-hook
              (lambda ()
@@ -83,6 +84,7 @@
                  (message "now set to: %s" web-mode-content-type))
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
 
+(add-hook 'css-mode-hook 'emmet-mode)
 (eval-after-load 'css-mode
   '(add-hook 'css-mode-hook
              (lambda ()

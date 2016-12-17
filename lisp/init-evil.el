@@ -100,6 +100,9 @@
 (evil-define-key 'normal neotree-mode-map (kbd "c") 'neotree-create-node)
 (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-rename-node)
 
+(evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-yas)
+(evil-define-key 'insert emmet-mode-keymap (kbd "<tab>") 'emmet-expand-yas)
+
 (after-load 'go-mode
   (define-key evil-normal-state-map (kbd "M-.") 'godef-jump-other-window))
 
