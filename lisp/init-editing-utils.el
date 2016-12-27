@@ -5,7 +5,7 @@
 
 (require-package 'fill-column-indicator)
 (require-package 'unfill)
-(require-package 'autopair)
+;; (require-package 'autopair)
 (require-package 'editorconfig)
 (require-package 'aggressive-indent)
 (require-package 'neotree)
@@ -20,9 +20,9 @@
 (add-hook 'text-mode-hook (editorconfig-mode 1))
 
 ;; enable autopair in all buffers
-(autopair-global-mode)
+;; (autopair-global-mode)
 
-;; (electric-pair-mode)
+(electric-pair-mode)
 
 ;; (global-aggressive-indent-mode 1)
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
@@ -74,12 +74,6 @@
 ;; (global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
 
 
-;; (when (eval-when-compile (string< "24.3.1" emacs-version))
-;;   ;; https://github.com/purcell/emacs.d/issues/138
-;;   (after-load 'subword
-;;     (diminish 'subword-mode)))
-
-
 (when (maybe-require-package 'indent-guide)
   (add-hook 'prog-mode-hook 'indent-guide-mode)
   (after-load 'indent-guide
@@ -92,18 +86,18 @@
 (global-undo-tree-mode)
 (diminish 'undo-tree-mode)
 
-;; (require-package 'highlight-symbol)
-;; (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
-;;   (add-hook hook 'highlight-symbol-mode)
-;;   (add-hook hook 'highlight-symbol-nav-mode))
-;; (add-hook 'org-mode-hook 'highlight-symbol-nav-mode)
-;; (after-load 'highlight-symbol
-;;   (diminish 'highlight-symbol-mode)
-;;   (defadvice highlight-symbol-temp-highlight (around sanityinc/maybe-suppress activate)
-;;     "Suppress symbol highlighting while isearching."
-;;     (unless (or isearch-mode
-;;                 (and (boundp 'multiple-cursors-mode) multiple-cursors-mode))
-;;       ad-do-it)))
+(require-package 'highlight-symbol)
+(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
+  (add-hook hook 'highlight-symbol-mode)
+  (add-hook hook 'highlight-symbol-nav-mode))
+(add-hook 'org-mode-hook 'highlight-symbol-nav-mode)
+(after-load 'highlight-symbol
+  (diminish 'highlight-symbol-mode)
+  (defadvice highlight-symbol-temp-highlight (around sanityinc/maybe-suppress activate)
+    "Suppress symbol highlighting while isearching."
+    (unless (or isearch-mode
+                (and (boundp 'multiple-cursors-mode) multiple-cursors-mode))
+      ad-do-it)))
 
 ;; ;;----------------------------------------------------------------------------
 ;; ;; Zap *up* to char is a handy pair for zap-to-char
