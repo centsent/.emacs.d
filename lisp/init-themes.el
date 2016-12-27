@@ -7,9 +7,12 @@
 ;; (require-package 'solarized-theme)
 (require-package 'ample-theme)
 (require-package 'powerline)
+;; (require-package 'powerline-evil)
 
 ;; (load-theme 'atom-one-dark t)
 (powerline-default-theme)
+;; (powerline-evil-vim-color-theme)
+;; (display-time-mode t)
 
 ;; (load-theme 'solarized-dark t)
 
