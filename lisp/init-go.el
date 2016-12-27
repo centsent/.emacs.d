@@ -4,7 +4,7 @@
 ;;; Code:
 
 (require-package 'go-mode)
-(require-package 'go-autocomplete)
+;; (require-package 'go-autocomplete)
 ;; (require-package 'auto-complete)
 
 
@@ -14,8 +14,11 @@
 
 (defun go-mode-setup ()
   ;; Use goreturns instead of go-fmt
-  (auto-complete-mode 1)
-  (setq gofmt-command "goreturns")
+  ;; (auto-complete-mode 1)
+  (company-mode 1)
+  (set (make-local-variable 'company-backends) '(company-go))
+  (editorconfig-apply)
+  (setq gofmt-command "goimports")
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
   ;; Customize compile command to run go build
