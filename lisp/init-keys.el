@@ -1,8 +1,7 @@
-;;; init-osx-keys --- Remap keys on OSX
+;;; init-keys --- Remap keys on OSX
 ;;; Commentary:
 
 ;;; Code:
-(defvar *is-a-mac*)
 (when *is-a-mac*
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'none)
@@ -24,6 +23,9 @@
   ;; (global-set-key (kbd "M-ˍ") 'ns-do-hide-others) ;; what describe-key reports for cmd-option-h
   )
 
+(when *is-a-linux*
+  (setq x-super-keysym 'meta))
 
-(provide 'init-osx-keys)
-;;; init-osx-keys.el ends here
+
+(provide 'init-keys)
+;;; init-keys.el ends here

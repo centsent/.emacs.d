@@ -11,6 +11,7 @@
 (require 'init-benchmarking)
 
 (defconst *is-a-mac* (eq system-type 'darwin))
+(defconst *is-a-linux* (eq system-type 'gnu/linux))
 
 ;;----------------------------------------------------------------------------
 ;; Temporarily reduce garbage collection during startup
@@ -39,7 +40,7 @@
 ;;----------------------------------------------------------------------------
 (require-package 'better-defaults)
 
-(require 'init-osx-keys)
+(require 'init-keys)
 (require 'init-themes)
 (require 'init-ido)
 (require 'init-company)
@@ -65,7 +66,7 @@
 ;; (require 'init-recentf)
 (require 'init-hippie-expand)
 (require 'init-windows)
-;; (require 'init-sessions)
+(require 'init-sessions)
 ;; (require 'init-fonts)
 ;; (require 'init-mmm)
 
@@ -89,7 +90,7 @@
 ;; (require 'init-erlang)
 ;; (require 'init-javascript)
 ;; (require 'init-php)
-;; (require 'init-org)
+(require 'init-org)
 ;; (require 'init-nxml)
 ;; (require 'init-html)
 (require 'init-css)
@@ -109,7 +110,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (powerline-evil fcitx yaml-mode all-the-icons neotree company-go auto-complete-config go-autocomplete go-mode-autoloads go-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep-ag web-mode web-beautify unfill tern-auto-complete switch-window solarized-theme smex skewer-less session scss-mode sass-mode rainbow-mode py-yapf powerline persp-projectile page-break-lines multiple-cursors multi-term move-dup mmm-mode markdown-mode magit-gh-pulls less-css-mode json-mode js-doc indent-guide idomenu ido-ubiquitous ibuffer-vc highlight-symbol highlight-escape-sequences helm-projectile helm-dash gitignore-mode github-issues github-clone gitconfig-mode git-timemachine git-messenger git-blame general fullframe flycheck fill-column-indicator expand-region exec-path-from-shell evil-tabs evil-surround evil-nerd-commenter espresso-theme emmet-mode elpy editorconfig disable-mouse diminish css-eldoc company-tern company-quickhelp bug-reference-github browse-kill-ring better-defaults avy autopair atom-one-dark-theme ample-theme aggressive-indent ag))))
+    (paredit cask-mode flycheck-package highlight-quoted macrostep cl-lib-highlight redshank rainbow-delimiters hl-sexp auto-compile ipretty lively elisp-slime-nav org-pomodoro org-fstree powerline-evil fcitx yaml-mode all-the-icons neotree company-go auto-complete-config go-autocomplete go-mode-autoloads go-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep-ag web-mode web-beautify unfill tern-auto-complete switch-window solarized-theme smex skewer-less session scss-mode sass-mode rainbow-mode py-yapf powerline persp-projectile page-break-lines multiple-cursors multi-term move-dup mmm-mode markdown-mode magit-gh-pulls less-css-mode json-mode js-doc indent-guide idomenu ido-ubiquitous ibuffer-vc highlight-symbol highlight-escape-sequences helm-projectile helm-dash gitignore-mode github-issues github-clone gitconfig-mode git-timemachine git-messenger git-blame general fullframe flycheck fill-column-indicator expand-region exec-path-from-shell evil-tabs evil-surround evil-nerd-commenter espresso-theme emmet-mode elpy editorconfig disable-mouse diminish css-eldoc company-tern company-quickhelp bug-reference-github browse-kill-ring better-defaults avy autopair atom-one-dark-theme ample-theme aggressive-indent ag)))
+ '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
