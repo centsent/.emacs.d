@@ -3,6 +3,7 @@
 
 ;;; Code:
 
+(require-package 'diminish)
 (require-package 'fill-column-indicator)
 (require-package 'unfill)
 ;; (require-package 'autopair)
