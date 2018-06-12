@@ -24,5 +24,14 @@
 ;; (enable-theme 'ample-flat)
 ;; (enable-theme 'ample-light)
 
+;; Disable the menu bar
+(menu-bar-mode -1) 
+
+;; Disable the scrollbar
+(toggle-scroll-bar -1)
+
+;; Disable the toolbar
+(tool-bar-mode -1) 
+
 (provide 'init-themes)
 ;;; init-themes.el ends here
