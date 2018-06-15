@@ -32,7 +32,6 @@
 (require 'init-keys)
 (require 'init-editing-utils)
 
-
 (require 'init-projectile)
 (require 'init-helm)
 
@@ -40,6 +39,8 @@
 
 (require 'init-flycheck)
 (require 'init-javascript)
+
+(require 'init-typescript)
 
 (provide 'init)
 ;;; init.el ends here
