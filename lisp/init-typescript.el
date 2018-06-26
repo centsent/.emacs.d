@@ -1,4 +1,4 @@
-;;; init-typescript --- helm configurations
+;;; init-typescript --- typescript configurations
 ;;; Commentary:
 
 ;;; Code:
@@ -31,4 +31,4 @@
  (flycheck-add-mode 'typescript-tslint 'web-mode)
 
 (provide 'init-typescript)
-;;; init-typescript.elends here
+;;; init-typescript.el ends here
