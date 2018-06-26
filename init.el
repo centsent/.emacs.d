@@ -44,6 +44,8 @@
 
 (require 'init-typescript)
 
+(require 'init-company)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
