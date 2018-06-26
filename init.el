@@ -42,6 +42,8 @@
 (require 'init-flycheck)
 (require 'init-javascript)
 
+(require 'init-typescript)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
