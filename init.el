@@ -32,6 +32,7 @@
 (require 'init-keys)
 (require 'init-editing-utils)
 
+(require 'init-git)
 
 (require 'init-projectile)
 (require 'init-helm)
