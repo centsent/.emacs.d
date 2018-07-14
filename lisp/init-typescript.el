@@ -26,6 +26,7 @@
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 
 ;; enable typescript-tslint checker
  (flycheck-add-mode 'typescript-tslint 'web-mode)
