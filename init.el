@@ -31,6 +31,9 @@
 (require 'init-evil)
 (require 'init-keys)
 (require 'init-editing-utils)
+(require 'init-windows)
+
+(require 'init-git)
 
 
 (require 'init-projectile)
