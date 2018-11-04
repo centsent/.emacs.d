@@ -35,6 +35,7 @@
 
 (require 'init-git)
 
+
 (require 'init-projectile)
 (require 'init-helm)
 
@@ -42,10 +43,6 @@
 
 (require 'init-flycheck)
 (require 'init-javascript)
-
-(require 'init-typescript)
-
-(require 'init-company)
 
 (provide 'init)
 ;;; init.el ends here
