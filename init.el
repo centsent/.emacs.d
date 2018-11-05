@@ -45,6 +45,8 @@
 
 (require 'init-go)
 
+(require 'init-multi-term)
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
