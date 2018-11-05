@@ -25,7 +25,6 @@
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
-
 (require 'init-themes)
 
 (require 'init-evil)
@@ -43,6 +42,8 @@
 
 (require 'init-flycheck)
 (require 'init-javascript)
+
+(require 'init-go)
 
 (provide 'init)
 ;;; init.el ends here
