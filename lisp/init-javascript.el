@@ -56,8 +56,8 @@
 
 (eval-after-load 'js2-mode
     '(progn
-       (add-hook 'web-mode-hook #'add-node-modules-path)
-       (add-hook 'web-mode-hook #'prettier-js-mode)))
+       (add-hook 'js2-mode-hook #'add-node-modules-path)
+       (add-hook 'js2-mode-hook #'prettier-js-mode)))
 
 (eval-after-load 'web-mode
     '(progn
