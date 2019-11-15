@@ -1,5 +1,7 @@
 ;;; Find and load the correct package.el
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; When switching between Emacs 23 and 24, we always use the bundled package.el in Emacs 24
 (let ((package-el-site-lisp-dir
        (expand-file-name "site-lisp/package" user-emacs-directory)))
@@ -13,7 +15,9 @@
 
 
 ;;; Standard package repositories
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 
 

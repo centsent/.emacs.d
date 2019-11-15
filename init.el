@@ -42,6 +42,7 @@
 
 (require 'init-flycheck)
 (require 'init-javascript)
+(require 'init-typescript)
 
 (require 'init-go)
 

@@ -163,10 +163,11 @@
 
 ;; Use `SPC` as leader key
 (nvmap :prefix "SPC"
-       "0" 'delete-window
-       "1" 'delete-other-windows
-       "2" 'split-window-below
-       "3" 'split-window-right)
+  "0" 'delete-window
+  "1" 'delete-other-windows
+  "2" 'split-window-below
+  "3" 'split-window-right
+  "f" 'helm-projectile-grep)
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
