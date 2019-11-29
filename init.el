@@ -57,7 +57,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-projectile helm projectile page-break-lines avy expand-region browse-kill-ring highlight-symbol diminish yaml-mode unfill undo-tree neotree indent-guide fullframe fill-column-indicator exec-path-from-shell editorconfig dockerfile-mode aggressive-indent))))
+    (auto-compile helm-projectile helm projectile page-break-lines avy expand-region browse-kill-ring highlight-symbol diminish yaml-mode unfill undo-tree neotree indent-guide fullframe fill-column-indicator exec-path-from-shell editorconfig dockerfile-mode aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

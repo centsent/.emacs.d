@@ -24,12 +24,11 @@
 (add-hook 'before-save-hook 'tide-format-before-save)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
-
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 
 ;; enable typescript-tslint checker
- (flycheck-add-mode 'typescript-tslint 'web-mode)
+(flycheck-add-mode 'typescript-tslint 'web-mode)
 
 (provide 'init-typescript)
 ;;; init-typescript.el ends here
