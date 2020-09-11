@@ -6,7 +6,7 @@
 (require-package 'company)
 (require-package 'company-go)
 
-(ac-config-default)
+; (ac-config-default)
 
 (defun go-mode-setup ()
   (editorconfig-apply)
